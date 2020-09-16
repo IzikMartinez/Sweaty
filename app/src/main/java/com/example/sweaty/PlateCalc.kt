@@ -1,5 +1,6 @@
-class PlateCalc {
-    fun countPlates(weight: Int) {
+class PlateCalc constructor(working: String){
+    private val weight: Int = working.toInt()
+    fun countPlates(): String {
         var plateWeight = weight - 45;
         var forty=0; var thir=0; var twen=0; var ten=0; var five=0; var pointFive =0;
 
@@ -27,18 +28,20 @@ class PlateCalc {
             }
         }
 
-        print("You must add:\n");
+        var outString: String = ""
         if(forty != 0)
-            println("45: $forty")
+            outString += "45: $forty\n"
         if (thir != 0)
-            println("35: $thir")
+            outString += "35: $thir\n"
         if (twen!= 0)
-            println("25: $twen")
+            outString += "25: $twen\n"
         if (ten != 0)
-            println("10: $ten")
+            outString += "10: $ten\n"
         if (five!= 0)
-            println("5: $five")
+            outString += "5: $five\n"
         if (pointFive!=0)
-            println("2.5: $pointFive")
+            outString += "2.5: $pointFive\n"
+
+        return outString
     }
 }

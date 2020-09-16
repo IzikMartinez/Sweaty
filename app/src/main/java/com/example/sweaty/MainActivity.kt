@@ -12,16 +12,15 @@ class MainActivity: AppCompatActivity() {
         setContentView(R.layout.main_activity)
 
         val plateButton = findViewById<Button>(R.id.toPlateButton)
-        plateButton?.setOnClickListener() {
+        plateButton?.setOnClickListener {
             startActivity(Intent(this, ToPlateActivity::class.java))
         }
 
         val warmupButton = findViewById<Button>(R.id.warmupButton)
-        warmupButton?.setOnClickListener() {
+        warmupButton?.setOnClickListener {
             startActivity(Intent(this, ToWarmupActivity::class.java))
         }
 
-        val plateText = findViewById<EditText>(R.id.plateText)
-        val plateCalcButton= findViewById<Button>(R.id.plateCalcButton)
+
     }
 }
