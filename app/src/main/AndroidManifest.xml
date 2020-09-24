@@ -17,6 +17,17 @@
         </activity>
         <activity android:name=".ToPlateActivity" />
         <activity android:name=".ToWarmupActivity" />
+        <activity android:name=".ToMacroActivity" />
+        <activity android:name=".ToTemplateActivity" />
+        <activity android:name=".ToBmiActivity" />
+        <activity android:name=".ToBodybuildingActivity" />
+        <activity android:name=".ToPowerliftingActivity" />
+        <activity android:name=".ToJournalActivity" />
+        <activity android:name=".ToTimerActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 

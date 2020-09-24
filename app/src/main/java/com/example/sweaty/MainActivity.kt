@@ -21,6 +21,36 @@ class MainActivity: AppCompatActivity() {
             startActivity(Intent(this, ToWarmupActivity::class.java))
         }
 
+        val bodybuildingButton = findViewById<Button>(R.id.toExerciseButton)
+        bodybuildingButton?.setOnClickListener {
+            startActivity(Intent(this, ToBodybuildingActivity::class.java))
+        }
+
+        val powerliftingButton = findViewById<Button>(R.id.toPowerLifting)
+        powerliftingButton?.setOnClickListener {
+            startActivity(Intent(this, ToPowerliftingActivity::class.java))
+        }
+
+        val bmiButton = findViewById<Button>(R.id.toBmiButton)
+        bmiButton?.setOnClickListener {
+            startActivity(Intent(this, ToBmiActivity::class.java))
+        }
+
+        val macrosButton = findViewById<Button>(R.id.toMacrosButton)
+        macrosButton?.setOnClickListener {
+            startActivity(Intent(this, ToMacroActivity::class.java))
+        }
+
+
+        val journalButton = findViewById<Button>(R.id.toJournalButton)
+        journalButton?.setOnClickListener {
+            startActivity(Intent(this, ToJournalActivity::class.java))
+        }
+        val timerButton= findViewById<Button>(R.id.toTimerButton)
+        timerButton?.setOnClickListener {
+            startActivity(Intent(this, ToTimerActivity::class.java))
+        }
+
 
     }
 }

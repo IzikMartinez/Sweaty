@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sweaty</string>
     <string name="plate_calculator">Plate Calculator</string>
+    <string name="hello_first_fragment">to first fragment</string>
 </resources>
