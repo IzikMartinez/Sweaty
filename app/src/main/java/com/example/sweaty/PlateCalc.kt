@@ -1,3 +1,5 @@
+package com.example.sweaty
+
 class PlateCalc constructor(working: String){
     private val weight: Int = working.toInt()
     fun countPlates(): String {
@@ -35,7 +37,6 @@ class PlateCalc constructor(working: String){
                 }
             }
         }
-
         var outString: String = ""
         if(forty != 0)
             outString += "45: $forty\n"
