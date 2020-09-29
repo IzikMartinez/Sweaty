@@ -25,11 +25,11 @@
         android:id="@+id/pplButton"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginStart="64dp"
         android:layout_marginTop="168dp"
+        android:layout_marginBottom="10dp"
         android:text="Squat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintBottom_toTopOf="@+id/ulButton"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,20 +38,22 @@
         android:layout_width="110dp"
         android:layout_height="60dp"
         android:layout_marginTop="168dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="10dp"
         android:text="Power Clean"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pplButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/broButton"
         android:layout_width="121dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="70dp"
         android:text="Standing Press"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fullButton"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         app:layout_constraintVertical_bias="0.027" />
 
@@ -59,11 +61,10 @@
         android:id="@+id/ulButton"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginBottom="10dp"
         android:text="Deadlift"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintBottom_toTopOf="@+id/fullButton"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pplButton" />
 
@@ -71,24 +72,34 @@
         android:id="@+id/fullButton"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="70dp"
         android:text="Bench Press"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintEnd_toStartOf="@+id/broButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulButton"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toBottomOf="@+id/ulButton" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="10dp"
         android:text="Power Snatch"
+        app:layout_constraintBottom_toTopOf="@+id/broButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ulButton"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Select One"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

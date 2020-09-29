@@ -6,16 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/button">
 
     <Button
         android:id="@+id/toPlateButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
         android:text="@string/plate_calculator"
+        app:layout_constraintBottom_toTopOf="@+id/toBmiButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toMacrosButton"
         app:layout_constraintTop_toBottomOf="@+id/warmupButton"
         tools:text="Plate Calculator" />
 
@@ -24,18 +25,20 @@
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="20dp"
         android:text="Warmup Calculator"
+        app:layout_constraintBottom_toTopOf="@+id/toPlateButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toTimerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/toTimerButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="160dp"
         android:text="Inter-set Timer"
+        app:layout_constraintBottom_toTopOf="@+id/toMacrosButton"
+        app:layout_constraintEnd_toStartOf="@+id/warmupButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,9 +46,9 @@
         android:id="@+id/toMacrosButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
         android:text="Macros Calculator"
+        app:layout_constraintBottom_toTopOf="@+id/toExerciseButton"
+        app:layout_constraintEnd_toStartOf="@+id/toPlateButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toTimerButton" />
 
@@ -53,9 +56,9 @@
         android:id="@+id/toExerciseButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
         android:text="Bodybuilding"
+        app:layout_constraintBottom_toTopOf="@+id/toPowerLifting"
+        app:layout_constraintEnd_toStartOf="@+id/toBmiButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toMacrosButton" />
 
@@ -63,9 +66,10 @@
         android:id="@+id/toPowerLifting"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
         android:text="Powerlifting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toJournalButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toExerciseButton" />
 
@@ -73,32 +77,32 @@
         android:id="@+id/toBmiButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
         android:text="BMI Calculator"
+        app:layout_constraintBottom_toTopOf="@+id/toJournalButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toExerciseButton"
         app:layout_constraintTop_toBottomOf="@+id/toPlateButton" />
 
     <Button
         android:id="@+id/toJournalButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
         android:text="Workout Journal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toPowerLifting"
         app:layout_constraintTop_toBottomOf="@+id/toBmiButton" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="145dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="132dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="Sweaty"
-        android:textSize="36sp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/warmupButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
