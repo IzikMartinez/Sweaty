@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightText"
+        app:layout_constraintTop_toBottomOf="@+id/bmiHeightText"
         app:layout_constraintVertical_bias="0.057" />
 
     <androidx.appcompat.widget.Toolbar
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/weightText"
+        android:id="@+id/bmiWeightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
@@ -46,53 +46,37 @@
         android:layout_width="278dp"
         android:layout_height="44dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Enter Weight (kg)"
+        android:text="Enter Weight (lb)"
         android:textAllCaps="false"
         android:textColor="#575757"
         android:textIsSelectable="false"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/weightText"
+        app:layout_constraintBottom_toTopOf="@+id/bmiWeightText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         app:layout_constraintVertical_bias="0.846" />
 
-    <EditText
-        android:id="@+id/bmiOutput"
-        android:layout_width="228dp"
-        android:layout_height="164dp"
-        android:layout_marginTop="40dp"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:lines="5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiCalcButton"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/heightView"
         android:layout_width="256dp"
         android:layout_height="49dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Enter height (m)"
+        android:text="Enter height (in)"
         android:textAllCaps="false"
         android:textColor="#575757"
         android:textIsSelectable="false"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/heightText"
+        app:layout_constraintBottom_toTopOf="@+id/bmiHeightText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightText"
+        app:layout_constraintTop_toBottomOf="@+id/bmiWeightText"
         app:layout_constraintVertical_bias="0.862" />
 
     <EditText
-        android:id="@+id/heightText"
+        android:id="@+id/bmiHeightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -103,6 +87,19 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heightView" />
+
+    <EditText
+        android:id="@+id/bmiOutText"
+        android:layout_width="260dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiCalcButton" />
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

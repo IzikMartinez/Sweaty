@@ -39,17 +39,17 @@ class PlateCalc constructor(working: String){
         }
         var outString: String = ""
         if(forty != 0)
-            outString += "45: $forty\n"
+            outString += "45lb plates: $forty\n"
         if (thirty != 0)
-            outString += "35: $thirty\n"
+            outString += "35lb plates: $thirty\n"
         if (twenty!= 0)
-            outString += "25: $twenty\n"
+            outString += "25lb plates: $twenty\n"
         if (ten != 0)
-            outString += "10: $ten\n"
+            outString += "10lb plates: $ten\n"
         if (five!= 0)
-            outString += "5: $five\n"
+            outString += "5lb plates: $five\n"
         if (pointFive!=0)
-            outString += "2.5: $pointFive\n"
+            outString += "2.5lb plates: $pointFive\n"
 
         return outString
     }

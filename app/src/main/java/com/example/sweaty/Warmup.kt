@@ -1,15 +1,24 @@
-fun warmupWeights(weight: Int) {
-    val warmup1 = ceiling( weight*0.5)
-    val warmup2 = ceiling( weight*0.75)
-    val warmup3 = ceiling( weight*0.9)
+package com.example.sweaty
 
-    println("First Set: $warmup1\nSecond Set: $warmup2\nThird Set: $warmup3")
-}
+import android.text.Editable
+import kotlin.math.ceil
 
-fun ceiling(weight: Double): Double{
-    var ceilWeight = weight
-    while (ceilWeight % 5 !=0.0) {
-        ceilWeight += 1
+class Warmup {
+
+    fun warmupWeights(weight: Editable): String {
+        val weight = weight.toString().toDouble()
+        val warmup1 = ceiling_five(ceil( weight*0.5))
+        val warmup2 = ceiling_five(ceil( weight*0.75))
+        val warmup3 = ceiling_five(ceil( weight*0.9))
+
+        return "First Warm-up Set: $warmup1 x 5\nSecond Warm-up Set: $warmup2 x3\nThird Warm-up Set: $warmup3 x1"
     }
-    return ceilWeight
+
+    private fun ceiling_five(weight: Double): Double{
+        var ceilWeight = weight
+        while (ceilWeight % 5 !=0.0) {
+                ceilWeight += 1
+        }
+        return ceilWeight
+    }
 }

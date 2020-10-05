@@ -14,7 +14,7 @@ class ToPlateActivity: AppCompatActivity() {
         setContentView(R.layout.plate_cal_activity)
 
         val plateText = findViewById<EditText>(R.id.plateText)
-        val outText = findViewById<TextView>(R.id.plateOutput)
+        val outText = findViewById<TextView>(R.id.outWeightText)
         val plateCalcButton= findViewById<Button>(R.id.plateCalcButton)
         plateCalcButton.setOnClickListener{
             outText.text = PlateCalc(plateText.text.toString()).countPlates()
@@ -28,6 +28,14 @@ class ToWarmupActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.warmup_activity)
+
+        val weightText = findViewById<EditText>(R.id.warmupInputText);
+        val weightBtn = findViewById<Button>(R.id.warmupButton);
+        val outText = findViewById<EditText>(R.id.warmupOutput);
+
+        weightBtn.setOnClickListener {
+            outText.setText(Warmup().warmupWeights(weightText.text))
+        }
     }
 }
 
@@ -52,10 +60,14 @@ class ToBmiActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity)
 
-        val bmiText = findViewById<EditText>(R.id.plateText)
-        val weightText= findViewById<EditText>(R.id.weightText)
-        val outText = findViewById<TextView>(R.id.plateOutput)
-        val plateCalcButton= findViewById<Button>(R.id.plateCalcButton)
+        val outText = findViewById<EditText>(R.id.bmiOutText)
+        val heightText = findViewById<EditText>(R.id.bmiHeightText).text
+        val weightText = findViewById<EditText>(R.id.bmiWeightText).text
+        val bmiCalcButton = findViewById<Button>(R.id.bmiCalcButton)
+        bmiCalcButton.setOnClickListener{
+            outText.setText( BmiCalc(heightText.toString(), weightText.toString()).calculateBMI() )
+        }
+
 
     }
 }
