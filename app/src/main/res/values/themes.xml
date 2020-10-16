@@ -5,7 +5,7 @@
         <item name="colorPrimary">#01579B</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">#CCFF90</item>
-        <item name="android:windowBackground">@drawable/button</item>
+        <item name="android:windowBackground">@drawable/activity_background</item>
         <item name="android:textColor">#CCFF90</item>
 
         <!-- Status bar color. -->
