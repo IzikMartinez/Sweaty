@@ -46,7 +46,7 @@
         app:layout_constraintBottom_toTopOf="@+id/toMacrosButton"
         app:layout_constraintEnd_toStartOf="@+id/warmupButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/toMacrosButton"

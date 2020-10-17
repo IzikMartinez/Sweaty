@@ -1,12 +1,9 @@
 package com.example.sweaty
-
+import android.content.Context
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 class ToPlateActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +62,7 @@ class ToBmiActivity: AppCompatActivity() {
         val weightText = findViewById<EditText>(R.id.bmiWeightText).text
         val bmiCalcButton = findViewById<Button>(R.id.bmiCalcButton)
         bmiCalcButton.setOnClickListener{
-            outText.setText( BmiCalc(heightText.toString(), weightText.toString()).calculateBMI() )
+            outText.setText(BmiCalc(heightText.toString(), weightText.toString()).calculateBMI())
         }
 
 
@@ -100,5 +97,33 @@ class ToTimerActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.timer_activity)
+
+        val inputTime = findViewById<EditText>(R.id.txtTimeInput)
+        val start = findViewById<Button>(R.id.btnStart)
+        val reset = findViewById<Button>(R.id.btnReset)
+        val timer = findViewById<TextView>(R.id.txtTimer)
+        val progressTimer = findViewById<ProgressBar>(R.id.progressBarTimer)
+
+        start.setOnClickListener{
+            val input = inputTime.text.toString()
+            if(input.isNotEmpty() && Integer.valueOf(input) > 0){
+            progressTimer.max = Integer.valueOf(input)*60000
+            val inputManager: InputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            inputManager.hideSoftInputFromWindow(
+                currentFocus!!.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
+            inputTime.setEnabled(false)
+            Timer(input).startTimeCounter(this,inputTime, timer, progressTimer, reset)
+
+            }else{
+                Toast.makeText(applicationContext,"Enter Minutes Greater Than 0",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+
     }
 }
