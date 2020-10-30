@@ -1,9 +1,14 @@
 package com.example.sweaty
+import android.animation.ObjectAnimator
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+
 
 class ToPlateActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
