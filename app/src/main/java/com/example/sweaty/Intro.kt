@@ -16,18 +16,19 @@ class Intro : AppCompatActivity() {
         val logo =findViewById<ImageView>(R.id.imageLoading)
         val welcomeText =findViewById<TextView>(R.id.textView7)
         val objectAnimator = ObjectAnimator.ofFloat(logo, "rotation", 0f, 360f)
-        objectAnimator.duration = 2800
+        objectAnimator.duration = 2000
 
         objectAnimator.repeatCount = ObjectAnimator.INFINITE;
         objectAnimator.repeatMode = ObjectAnimator.RESTART;
 
         objectAnimator.start()
-        welcomeText.text ="Welcome to Sweaty !"
+        welcomeText.text ="WELCOME TO THE SWEATY APP!"
         Handler(Looper.getMainLooper()).postDelayed({
             val mainIntent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             finish()
-        }, 7000)
+        }, 5000)
 
     }
 }
