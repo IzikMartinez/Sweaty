@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sweaty.activities.MacroActivity
 
 class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,11 @@ class MainActivity: AppCompatActivity() {
 
         val macrosButton = findViewById<Button>(R.id.toMacrosButton)
         macrosButton?.setOnClickListener {
-            startActivity(Intent(this, ToMacroActivity::class.java))
+            val gender = false
+            Intent(this, MacroActivity::class.java).also {
+                it.putExtra("EXTRA_GENDER", gender)
+                startActivity(it)
+            }
         }
 
 
