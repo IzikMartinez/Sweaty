@@ -18,7 +18,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ToPlateActivity" />
         <activity android:name=".ToWarmupActivity" />
-        <activity android:name=".ToMacroActivity" />
+        <activity android:name=".activities.MacroActivity" />
         <activity android:name=".ToTemplateActivity" />
         <activity android:name=".ToBmiActivity" />
         <activity android:name=".ToBodybuildingActivity" />

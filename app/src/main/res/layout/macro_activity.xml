@@ -5,121 +5,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/daysInText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Workout Days per Week"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton5" />
-
-    <TextView
-        android:id="@+id/outMacroText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="104dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="You need to eat {{X}} calories per day"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
-
-    <RadioButton
-        android:id="@+id/radioMale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Female"
-        app:layout_constraintBottom_toTopOf="@+id/radioFemale"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <RadioButton
-        android:id="@+id/radioFemale"
-        android:layout_width="74dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:text="Male"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioMale" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="62dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="5dp"
+        android:id="@+id/etWeight"
+
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="45dp"
+        android:autofillHints="Enter weight"
+        android:hint="@string/weightHint"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/outMacroText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daysInText" />
+        android:textAlignment="center"
 
-    <RadioButton
-        android:id="@+id/radioButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Maintain Weight"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton5"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Lose" />
-
-    <RadioButton
-        android:id="@+id/Lose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="5dp"
-        android:text="Lose Weight"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioFemale" />
-
-    <RadioButton
-        android:id="@+id/radioButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gain Weight"
-        app:layout_constraintBottom_toTopOf="@+id/daysInText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="Weight Goal"
-        app:layout_constraintBottom_toTopOf="@+id/Lose"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioFemale" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="Gender"
-        app:layout_constraintBottom_toTopOf="@+id/radioMale"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="45dp"
+        android:autofillHints="Enter height"
+        android:hint="@string/heightHint"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etWeight" />
+
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="45dp"
+        android:autofillHints="Enter age"
+        android:hint="@string/ageHint"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHeight" />
+
+    <RadioGroup
+        android:id="@+id/rgpActivity"
+        android:layout_width="241dp"
+        android:layout_height="139dp"
+
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAge">
+
+        <RadioButton
+            android:id="@+id/rdOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Once a week" />
+
+        <RadioButton
+            android:id="@+id/rdTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twice a week" />
+
+        <RadioButton
+            android:id="@+id/rdThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Three times a week" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnGetMacros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Get Macros"
+        app:layout_constraintBottom_toTopOf="@+id/tvCarbOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCarbOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/carbs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvFatOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/fat"
+        app:layout_constraintBottom_toTopOf="@+id/tvProteinOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCarbOut"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/tvProteinOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/protein"
+        app:layout_constraintBottom_toTopOf="@id/tvTotalCalories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

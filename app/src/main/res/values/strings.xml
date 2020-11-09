@@ -5,4 +5,11 @@
     <string name="inter_set_timer">Inter-set Timer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="weightHint">Enter Weight</string>
+    <string name="heightHint">Enter Height</string>
+    <string name="ageHint">Enter Age</string>
+    <string name="fat">Fat:</string>
+    <string name="protein">Protein:</string>
+    <string name="carbs">Carbs:</string>
 </resources>
