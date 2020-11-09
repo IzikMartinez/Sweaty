@@ -12,6 +12,7 @@
         android:id="@+id/toPlateButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
+        android:background="@drawable/button"
         android:text="@string/plate_calculator"
         app:layout_constraintBottom_toTopOf="@+id/toBmiButton"
         app:layout_constraintEnd_toEndOf="parent"
