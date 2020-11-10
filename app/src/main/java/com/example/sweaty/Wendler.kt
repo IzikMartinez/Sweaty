@@ -1,6 +1,6 @@
 package com.example.sweaty
 
-class Wendler constructor(gender: Boolean) {
+class Wendler {
 
     private val ceiling = Warmup()
     private var ormPercent = 0.0
