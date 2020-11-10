@@ -17,7 +17,7 @@ class HarrisBenedict {
     private var const = 0.0
 
 
-    private fun setCoefficients() {
+    private fun setCoefficients(gender: Boolean) {
         // Female
         if (gender)  {
             wCo = 9.247
@@ -42,41 +42,43 @@ class HarrisBenedict {
         }
     }
 
-    private fun baseMetabolicRate(weight: Double, height: Double, age: Double): Double {
-        setCoefficients()
+    private fun baseMetabolicRate(weight: Double, height: Double, age: Double, gender: Boolean): Double {
+        setCoefficients(gender)
         return wCo*weight + hCo*height - aCo*age + const
     }
 
-    private fun totalEnergyExpenditure(weight: Double, height: Double, age: Double, activity: Int)
+    private fun totalEnergyExpenditure(weight: Double, height: Double, age: Double,
+                                       activity: Int, gender: Boolean)
             : Double { // Return type
-        return baseMetabolicRate(weight, height, age) * setActivityLevel(activity)
+        return baseMetabolicRate(weight, height, age, gender) * setActivityLevel(activity)
     }
 
-    fun getMacros(weight: Double, height: Double, age: Double, activity: Int, ratio: Int)
+    fun getMacros(weight: Double, height: Double, age: Double,
+                  activity: Int, ratio: Int, gender: Boolean)
             : Triple<Double,Double,Double>
     {
-        val tee = totalEnergyExpenditure(weight, height, age, activity)
+        val tee = totalEnergyExpenditure(weight, height, age, activity, gender)
 
         val carbs = when (ratio) {
             0 -> 0.2* tee
             1 -> 0.55* tee
             2 -> 0.4 * tee
             else -> 0.33 * tee
-        }
+        } / 4
 
         val protein = when (ratio) {
             0 -> 0.35* tee
             1 -> 0.35* tee
             2 -> 0.35 * tee
             else -> 0.33 * tee
-        }
+        } / 4
         
         val fat = when (ratio) {
             0 -> 0.45 * tee
             1 -> 0.1 * tee
             2 -> 0.25 * tee
             else -> 0.33 * tee
-        }
+        } / 9
 
         return Triple(carbs,protein,fat)
     }

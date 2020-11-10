@@ -7,20 +7,24 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.HarrisBenedict
 import com.example.sweaty.R
 
-
 class MacroActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.macro_activity)
 
-        val gender = intent.getBooleanExtra("EXTRA_GENDER", false)
-
-
         val carbo = findViewById<TextView>(R.id.tvCarbOut)
         val protein = findViewById<TextView>(R.id.tvProteinOut)
         val fat = findViewById<TextView>(R.id.tvFatOut)
         val calories = findViewById<TextView>(R.id.tvTotalCalories)
+
+        val rdOne  = findViewById<RadioButton>(R.id.rdOne)
+        val rdTwo = findViewById<RadioButton>(R.id.rdTwo)
+
+        val rdbMale = findViewById<RadioButton>(R.id.rdbMale)
+
+        val rdbLowCarb  = findViewById<RadioButton>(R.id.rdbLowCarb)
+        val rdbNormal = findViewById<RadioButton>(R.id.rdbNormal)
 
         
 
@@ -32,13 +36,28 @@ class MacroActivity : AppCompatActivity() {
             val height = findViewById<EditText>(R.id.etHeight).text.toString().toDouble()
             val age = findViewById<EditText>(R.id.etAge).text.toString().toDouble()
 
-            val hb = HarrisBenedict()
-            val macros = hb.getMacros(weight,height, age,4, 2)
+            val activity = when {
+                rdOne.isChecked -> 2
+                rdTwo.isChecked -> 3
+                else -> 4
+            }
 
-            carbo.text = "Carbo: ${macros.first.toInt()}"
-            protein.text = "Protein: ${macros.second.toInt()}"
-            fat.text = "Fat: ${macros.third.toInt()}"
-            calories.text = "Daily Calories: ${macros.first.toInt() + macros.second.toInt() + macros.third.toInt()}"
+            val gender = !rdbMale.isChecked
+
+            val ratio = when {
+                rdbLowCarb.isChecked -> 0
+                rdbNormal.isChecked -> 2
+                else -> 1
+            }
+
+            val hb = HarrisBenedict()
+            val macros = hb.getMacros(weight, height, age, activity, ratio, gender)
+
+            carbo.text = "Carbo: ${macros.first.toInt()}g"
+            protein.text = "Protein: ${macros.second.toInt()}g"
+            fat.text = "Fat: ${macros.third.toInt()}g"
+            calories.text = "Daily Calories: ${macros.first.toInt() *4 + macros.second.toInt()*4 + 
+                    macros.third.toInt() * 9}"
         }
 
 
