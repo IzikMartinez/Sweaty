@@ -18,6 +18,8 @@ class WendlerActivity : AppCompatActivity() {
         val rdOne = findViewById<RadioButton>(R.id.rdOne)
         val rdTwo = findViewById<RadioButton>(R.id.rdTwo)
 
+        val rdbGender = findViewById<RadioButton>(R.id.rdMale)
+
         btnCalculate.setOnClickListener() {
             val lift1 = findViewById<EditText>(R.id.editLift1).text.toString().toInt()
             val lift2 = findViewById<EditText>(R.id.editLift2).text.toString().toInt()
@@ -27,23 +29,25 @@ class WendlerActivity : AppCompatActivity() {
             val reps2 = findViewById<EditText>(R.id.editReps2).text.toString().toInt()
             val reps3 = findViewById<EditText>(R.id.editReps3).text.toString().toInt()
 
-            val displayWeight1 = findViewById<TextView>(R.id.txtLift1)
-            val displayWeight2 = findViewById<TextView>(R.id.txtLift2)
-            val displayWeight3 = findViewById<TextView>(R.id.txtLift3)
+            val displayWeight1 = findViewById<TextView>(R.id.tvLift1)
+            val displayWeight2 = findViewById<TextView>(R.id.tvLift2)
+            val displayWeight3 = findViewById<TextView>(R.id.tvLift3)
+
+            val gender = rdbGender.isChecked
 
             val wen = Wendler()
             if (rdOne.isChecked) {
-                val weight = wen.splitA(lift1, reps1, lift2, reps2, lift3, reps3)
-                displayWeight1.text = "Squat: $weight.first.toInt()} lbs"
-                displayWeight2.text = "Press: $weight.second.toInt()} lbs"
-                displayWeight3.text = "Clean: $weight.third.toInt()} lbs"
+                val weight = wen.splitA(lift1, reps1, lift2, reps2, lift3, reps3, gender)
+                displayWeight1.text = "Squat: ${weight.first.toInt()} lbs"
+                displayWeight2.text = "Press: ${weight.second.toInt()} lbs"
+                displayWeight3.text = "Clean: ${weight.third.toInt()} lbs"
             }
             else if(rdTwo.isChecked)
             {
-                val weight = wen.splitB(lift1, reps1, lift2, reps2, lift3, reps3)
-                displayWeight1.text = "Bench: $weight.first.toInt()} lbs"
-                displayWeight2.text = "Deadlift: $weight.second.toInt()} lbs"
-                displayWeight3.text = "Snatch: $weight.third.toInt()} lbs"
+                val weight = wen.splitB(lift1, reps1, lift2, reps2, lift3, reps3, gender)
+                displayWeight1.text = "Bench: ${weight.first.toInt()} lbs"
+                displayWeight2.text = "Deadlift: ${weight.second.toInt()} lbs"
+                displayWeight3.text = "Snatch: ${weight.third.toInt()} lbs"
             }
         }
     }

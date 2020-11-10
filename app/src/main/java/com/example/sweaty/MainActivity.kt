@@ -23,16 +23,6 @@ class MainActivity: AppCompatActivity() {
             startActivity(Intent(this, ToWarmupActivity::class.java))
         }
 
-        val bodybuildingButton = findViewById<Button>(R.id.toExerciseButton)
-        bodybuildingButton?.setOnClickListener {
-            startActivity(Intent(this, ToBodybuildingActivity::class.java))
-        }
-
-        val powerliftingButton = findViewById<Button>(R.id.toPowerLifting)
-        powerliftingButton?.setOnClickListener {
-            startActivity(Intent(this, ToPowerliftingActivity::class.java))
-        }
-
         val bmiButton = findViewById<Button>(R.id.toBmiButton)
         bmiButton?.setOnClickListener {
             startActivity(Intent(this, ToBmiActivity::class.java))

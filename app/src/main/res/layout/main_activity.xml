@@ -9,101 +9,76 @@
     android:background="@drawable/activity_background">
 
     <Button
-        android:id="@+id/toPlateButton"
+        android:id="@+id/toBmiButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/button"
-        android:text="@string/plate_calculator"
-        app:layout_constraintBottom_toTopOf="@+id/toBmiButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/toMacrosButton"
-        app:layout_constraintTop_toBottomOf="@+id/warmupButton"
-        tools:text="Plate Calculator" />
+        android:text="BMI Calculator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/warmupButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/button"
-        android:shadowColor="#A8A8A8"
         android:backgroundTint="#00FFFFFF"
+        android:shadowColor="#A8A8A8"
         android:text="Warmup Calculator"
-        app:layout_constraintBottom_toTopOf="@+id/toPlateButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/toTimerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/toTimerButton"
+        android:id="@+id/toPlateButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="160dp"
-        android:shadowColor="#A8A8A8"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/button"
-        android:backgroundTintMode="multiply"
-        android:text="@string/inter_set_timer"
-        app:layout_constraintBottom_toTopOf="@+id/toMacrosButton"
-        app:layout_constraintEnd_toStartOf="@+id/warmupButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <Button
-        android:id="@+id/toMacrosButton"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:text="Macros Calculator"
-        android:background="@drawable/button"
-        app:layout_constraintBottom_toTopOf="@+id/toExerciseButton"
-        app:layout_constraintEnd_toStartOf="@+id/toPlateButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toTimerButton" />
-
-    <Button
-        android:id="@+id/toExerciseButton"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:text="Bodybuilding"
-        android:background="@drawable/button"
-        app:layout_constraintBottom_toTopOf="@+id/toPowerLifting"
-        app:layout_constraintEnd_toStartOf="@+id/toBmiButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toMacrosButton" />
-
-    <Button
-        android:id="@+id/toPowerLifting"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
-        android:text="Powerlifting"
-        android:background="@drawable/button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/toJournalButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toExerciseButton" />
-
-    <Button
-        android:id="@+id/toBmiButton"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button"
-        android:text="BMI Calculator"
-        app:layout_constraintBottom_toTopOf="@+id/toJournalButton"
+        android:text="@string/plate_calculator"
+        app:layout_constraintBottom_toTopOf="@+id/toBmiButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/toExerciseButton"
-        app:layout_constraintTop_toBottomOf="@+id/toPlateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/warmupButton"
+        app:layout_constraintVertical_bias="0.504"
+        tools:text="Plate Calculator" />
 
     <Button
         android:id="@+id/toJournalButton"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
-        android:text="Workout Journal"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/button"
+        android:text="Progress Calculator"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/toPowerLifting"
-        app:layout_constraintTop_toBottomOf="@+id/toBmiButton" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/toMacrosButton"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button"
+        android:text="Macros Calculator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toTimerButton" />
+
+    <Button
+        android:id="@+id/toTimerButton"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="288dp"
+        android:background="@drawable/button"
+        android:backgroundTintMode="multiply"
+        android:shadowColor="#A8A8A8"
+        android:text="@string/inter_set_timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"

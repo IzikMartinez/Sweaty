@@ -14,11 +14,11 @@ class Warmup {
         return "First Warm-up Set: $warmup1 x 5\nSecond Warm-up Set: $warmup2 x3\nThird Warm-up Set: $warmup3 x1"
     }
 
-    fun ceilingFive(weight: Double): Double {
-        var ceilWeight = weight
-        while (ceilWeight % 5 != 0.0) {
+    private fun ceilingFive(weight: Double): Double {
+        var ceilWeight = weight.toInt()
+        while (ceilWeight % 5 != 0) {
             ceilWeight += 1
         }
-        return ceilWeight
+        return ceilWeight.toDouble()
     }
 }
