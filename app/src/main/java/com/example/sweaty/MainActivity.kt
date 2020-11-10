@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.activities.MacroActivity
+import com.example.sweaty.activities.WendlerActivity
 
 class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +50,7 @@ class MainActivity: AppCompatActivity() {
 
         val journalButton = findViewById<Button>(R.id.toJournalButton)
         journalButton?.setOnClickListener {
-            startActivity(Intent(this, ToJournalActivity::class.java))
+            startActivity(Intent(this, WendlerActivity::class.java))
         }
         val timerButton= findViewById<Button>(R.id.toTimerButton)
         timerButton?.setOnClickListener {
