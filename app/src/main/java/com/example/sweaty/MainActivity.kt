@@ -42,6 +42,7 @@ class MainActivity: AppCompatActivity() {
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             }
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
 
         val journalButton = findViewById<Button>(R.id.toJournalButton)
@@ -49,6 +50,7 @@ class MainActivity: AppCompatActivity() {
             startActivity(Intent(this, WendlerActivity::class.java))
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
+
         val timerButton= findViewById<Button>(R.id.toTimerButton)
         timerButton?.setOnClickListener {
             startActivity(Intent(this, ToTimerActivity::class.java))
