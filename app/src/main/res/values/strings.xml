@@ -12,4 +12,10 @@
     <string name="fat">Fat:</string>
     <string name="protein">Protein:</string>
     <string name="carbs">Carbs:</string>
+    <string name="title_activity_macro_second_activity">macro_second_activity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
