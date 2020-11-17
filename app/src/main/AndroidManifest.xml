@@ -26,6 +26,15 @@
             android:value="true" />
 
         <activity
+            android:name=".macro_third_activity"
+            android:label="@string/title_activity_macro_third_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".macro_second_activity"
             android:label="@string/title_activity_macro_second_activity">
             <intent-filter>
