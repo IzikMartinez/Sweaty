@@ -9,12 +9,13 @@ import com.example.sweaty.activities.BMIActivity
 import com.example.sweaty.activities.MacroFirstActivity
 import com.example.sweaty.activities.MacrosSecondActivity
 import com.example.sweaty.activities.WendlerActivity
+import com.example.sweaty.UserData
 
 class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
+        UserData.init(this)
         val plateButton = findViewById<Button>(R.id.toPlateButton)
         plateButton?.setOnClickListener {
             startActivity(Intent(this, ToPlateActivity::class.java))

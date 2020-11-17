@@ -1,8 +1,8 @@
 package com.example.sweaty
 
-class BmiCalc constructor(height: String, weight: String) {
-    private val weight = weight.toFloat()
-    private val height = height.toFloat()
+class BmiCalc constructor(height: Double, weight: Double) {
+    private val weight = weight
+    private val height = height
 
     fun calculateBMI(): String {
         val out = ((weight /  (height * height))* 703)
