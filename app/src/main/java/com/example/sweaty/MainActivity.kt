@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sweaty.activities.BMIActivity
 import com.example.sweaty.activities.MacroFirstActivity
 import com.example.sweaty.activities.MacrosSecondActivity
 import com.example.sweaty.activities.WendlerActivity
@@ -30,7 +31,7 @@ class MainActivity: AppCompatActivity() {
 
         val bmiButton = findViewById<Button>(R.id.toBmiButton)
         bmiButton?.setOnClickListener {
-            startActivity(Intent(this, ToBmiActivity::class.java))
+            startActivity(Intent(this, BMIActivity::class.java))
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
 
         }

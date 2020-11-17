@@ -9,34 +9,46 @@ import com.example.sweaty.BmiCalc
 import com.example.sweaty.MainActivity
 import com.example.sweaty.R
 
-class BMIActivity : AppCompatActivity() {
+class BMIActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity)
 
-        val weight = findViewById<EditText>(R.id.bmiWeightText).text.toString().toDouble()
         val btnNext = findViewById<Button>(R.id.btnBmiNxt)
+        val weight = findViewById<EditText>(R.id.bmiWeightText).text.toString()
 
         btnNext.setOnClickListener() {
             Intent(this, BMISecondActivity::class.java).also {
-                it.putExtra("EXTRA_WEIGHT", weight)
+                if (weight == "")
+                    it.putExtra("EXTRA_WEIGHT", 60.0)
+                else
+                    it.putExtra("EXTRA_WEIGHT", weight.toDouble())
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
         }
-
     }
 }
+
 
 class BMISecondActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity2)
-        val height = findViewById<EditText>(R.id.bmiHeightText).text.toString().toDouble()
+
+        val weight = intent.getDoubleExtra("EXTRA_WEIGHT",60.0)
+        val height = findViewById<EditText>(R.id.bmiHeightText).text.toString()
         val btnCalculate = findViewById<Button>(R.id.bmiCalcButton)
+
         btnCalculate.setOnClickListener() {
             Intent(this, BMIThirdActivity::class.java).also {
-                it.putExtra("EXTRA_HEIGHT", height)
+
+                if (height == "")
+                    it.putExtra("EXTRA_HEIGHT", 60.0)
+                else
+                    it.putExtra("EXTRA_HEIGHT", height.toDouble())
+
+                it.putExtra("EXTRA_WEIGHT", weight)
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
