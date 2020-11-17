@@ -19,4 +19,5 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_macro_third_activity">macro_third_activity</string>
+    <string name="title_activity_macro_first_activity">macro_first_activity</string>
 </resources>

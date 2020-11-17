@@ -1,9 +1,11 @@
 package com.example.sweaty.activities
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.HarrisBenedict
 import com.example.sweaty.R
@@ -11,11 +13,9 @@ import com.example.sweaty.R
 class MacroFirstActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.macro_activity)
+        setContentView(R.layout.macro_first_activity)
 
-        val weight = findViewById<EditText>(R.id.etWeight).text.toString().toDouble()
-        val height = findViewById<EditText>(R.id.etHeight).text.toString().toDouble()
-        val age = findViewById<EditText>(R.id.etAge).text.toString().toDouble()
+
 
         val rdbMale = findViewById<RadioButton>(R.id.rdbMale)
         val gender = !rdbMale.isChecked
@@ -23,16 +23,32 @@ class MacroFirstActivity() : AppCompatActivity() {
         val btnBioNext = findViewById<Button>(R.id.btnBioNext)
 
         btnBioNext.setOnClickListener() {
+            val weight = findViewById<EditText>(R.id.etWeight).text.toString()
+            val height = findViewById<EditText>(R.id.etHeight).text.toString()
+            val age = findViewById<EditText>(R.id.etAge).text.toString()
+
             Intent(this, MacrosSecondActivity::class.java).also {
-                it.putExtra("EXTRA_WEIGHT", weight)
-                it.putExtra("EXTRA_HEIGHT", height)
-                it.putExtra("EXTRA_AGE", age)
+                if (weight == "")
+                    it.putExtra("EXTRA_WEIGHT", 60.0)
+                else
+                    it.putExtra("EXTRA_WEIGHT", weight.toDouble())
+
+                if (weight == "")
+                    it.putExtra("EXTRA_HEIGHT", 180.0)
+                else
+                    it.putExtra("EXTRA_HEIGHT", height.toDouble())
+
+                if (weight == "")
+                    it.putExtra("EXTRA_AGE", 20.0)
+                else
+                    it.putExtra("EXTRA_AGE", age.toDouble())
+
+
                 it.putExtra("EXTRA_GENDER", gender)
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
         }
-
     }
 }
 

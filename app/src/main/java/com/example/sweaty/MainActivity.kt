@@ -37,7 +37,7 @@ class MainActivity: AppCompatActivity() {
 
         val macrosButton = findViewById<Button>(R.id.toMacrosButton)
         macrosButton?.setOnClickListener {
-            Intent(this, MacrosSecondActivity::class.java).also {
+            Intent(this, MacroFirstActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             }
