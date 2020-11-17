@@ -15,22 +15,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiHeightText" />
+        app:layout_constraintTop_toBottomOf="@+id/bmiHeightText"
+        app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
-        android:id="@+id/heightView"
-        android:layout_width="256dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Enter height (in)"
-        android:textAllCaps="false"
-        android:textIsSelectable="false"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/bmiHeightText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bmiHeightText"
@@ -38,10 +25,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:ems="10"
+        android:hint="@string/heightHint"
+
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/bmiCalcButton"
+        android:textAlignment="center"
+        android:textSize="30sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

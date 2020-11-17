@@ -33,12 +33,12 @@ class MacroFirstActivity() : AppCompatActivity() {
                 else
                     it.putExtra("EXTRA_WEIGHT", weight.toDouble())
 
-                if (weight == "")
+                if (height == "")
                     it.putExtra("EXTRA_HEIGHT", 180.0)
                 else
                     it.putExtra("EXTRA_HEIGHT", height.toDouble())
 
-                if (weight == "")
+                if (age == "")
                     it.putExtra("EXTRA_AGE", 20.0)
                 else
                     it.putExtra("EXTRA_AGE", age.toDouble())

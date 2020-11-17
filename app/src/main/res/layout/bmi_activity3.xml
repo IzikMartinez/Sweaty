@@ -27,7 +27,9 @@
         android:layout_width="260dp"
         android:layout_height="77dp"
         android:ems="10"
-        android:gravity="start|top"
+        android:textAlignment="center"
+        android:textSize="34sp"
+
         app:layout_constraintBottom_toTopOf="@+id/btnHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

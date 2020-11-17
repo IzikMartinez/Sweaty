@@ -53,7 +53,6 @@ class ToTemplateActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.macro_activity)
-
     }
 }
 
@@ -63,23 +62,6 @@ class ToBmiActivity: AppCompatActivity() {
         setContentView(R.layout.bmi_activity)
     }
 }
-
-
-class ToBodybuildingActivity: AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.bodybuilding_activity)
-    }
-}
-
-
-class ToPowerliftingActivity: AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.powerlifting_activity)
-    }
-}
-
 
 class ToJournalActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -117,8 +99,5 @@ class ToTimerActivity: AppCompatActivity() {
                 Toast.makeText(applicationContext,"Enter Minutes Greater Than 0",Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
     }
 }

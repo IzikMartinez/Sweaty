@@ -9,7 +9,4 @@
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".activities.MacrosSecondActivity">
 
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

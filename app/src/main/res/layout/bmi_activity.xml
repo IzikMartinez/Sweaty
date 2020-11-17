@@ -12,27 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/btnBmiNxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightView" />
-
-    <TextView
-        android:id="@+id/weightView"
-        android:layout_width="278dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Enter Weight (lb)"
-        android:textAllCaps="false"
-        android:textIsSelectable="false"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/bmiWeightText"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="@string/weightHint"
+        android:inputType="number"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
+
 
     <Button
         android:id="@+id/btnBmiNxt"
@@ -43,6 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiWeightText" />
+        app:layout_constraintTop_toBottomOf="@+id/bmiWeightText"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
