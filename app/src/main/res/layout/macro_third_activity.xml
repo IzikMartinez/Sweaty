@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_grey"
+    android:background="@drawable/activity_background"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".macro_third_activity"
+    tools:context=".activities.MacrosThirdActivity"
     tools:deviceIds="wear">
 
     <RadioGroup

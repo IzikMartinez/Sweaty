@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/activity_background"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".macro_second_activity">
+    tools:context=".activities.MacrosSecondActivity">
 
     <RadioGroup
         android:id="@+id/rgpActivity"
