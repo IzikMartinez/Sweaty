@@ -4,8 +4,6 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <uses-feature android:name="android.hardware.type.watch" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +13,7 @@
         android:theme="@style/Theme.Sweaty">
         <uses-library
             android:name="com.google.android.wearable"
-            android:required="true" />
+            android:required="false" />
 
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
@@ -25,41 +23,25 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".macro_third_activity"
-            android:label="@string/title_activity_macro_third_activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".macro_second_activity"
-            android:label="@string/title_activity_macro_second_activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ToPlateActivity" />
         <activity android:name=".ToWarmupActivity" />
-        <activity android:name=".activities.MacroActivity" />
         <activity android:name=".ToTemplateActivity" />
         <activity android:name=".ToBmiActivity" />
         <activity android:name=".ToBodybuildingActivity" />
         <activity android:name=".ToPowerliftingActivity" />
-        <activity android:name=".activities.WendlerActivity" />
         <activity android:name=".ToTimerActivity" />
+
+        <activity android:name=".activities.WendlerActivity" />
+        <activity android:name=".activities.MacroFirstActivity" />
+        <activity android:name=".activities.MacrosThirdActivity" />
+        <activity android:name=".activities.MacrosSecondActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

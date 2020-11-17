@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sweaty.activities.MacroActivity
+import com.example.sweaty.activities.MacroFirstActivity
+import com.example.sweaty.activities.MacrosSecondActivity
 import com.example.sweaty.activities.WendlerActivity
 
 class MainActivity: AppCompatActivity() {
@@ -36,9 +37,7 @@ class MainActivity: AppCompatActivity() {
 
         val macrosButton = findViewById<Button>(R.id.toMacrosButton)
         macrosButton?.setOnClickListener {
-            val gender = false
-            Intent(this, MacroActivity::class.java).also {
-                it.putExtra("EXTRA_GENDER", gender)
+            Intent(this, MacrosSecondActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             }

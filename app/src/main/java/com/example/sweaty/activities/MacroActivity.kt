@@ -8,20 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.HarrisBenedict
 import com.example.sweaty.R
 
-class MacroActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+class MacroFirstActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.macro_activity)
-
-        var gender = intent.getBooleanExtra("EXTRA_GENDER", false)
 
         val weight = findViewById<EditText>(R.id.etWeight).text.toString().toDouble()
         val height = findViewById<EditText>(R.id.etHeight).text.toString().toDouble()
         val age = findViewById<EditText>(R.id.etAge).text.toString().toDouble()
 
         val rdbMale = findViewById<RadioButton>(R.id.rdbMale)
-        gender = !rdbMale.isChecked
+        val gender = !rdbMale.isChecked
 
         val btnBioNext = findViewById<Button>(R.id.btnBioNext)
 
@@ -39,10 +36,12 @@ class MacroActivity : AppCompatActivity() {
     }
 }
 
+
 class MacrosSecondActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.macro_second_activity)
+
         val weight = intent.getDoubleExtra("EXTRA_WEIGHT", 60.0)
         val height = intent.getDoubleExtra("EXTRA_HEIGHT", 180.0)
         val age = intent.getIntExtra("EXTRA_AGE", 20)
