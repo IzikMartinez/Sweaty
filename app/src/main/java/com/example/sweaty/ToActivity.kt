@@ -61,16 +61,6 @@ class ToBmiActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity)
-
-        val outText = findViewById<EditText>(R.id.bmiOutText)
-        val heightText = findViewById<EditText>(R.id.bmiHeightText).text
-        val weightText = findViewById<EditText>(R.id.bmiWeightText).text
-        val bmiCalcButton = findViewById<Button>(R.id.bmiCalcButton)
-        bmiCalcButton.setOnClickListener{
-            outText.setText(BmiCalc(heightText.toString(), weightText.toString()).calculateBMI())
-        }
-
-
     }
 }
 
