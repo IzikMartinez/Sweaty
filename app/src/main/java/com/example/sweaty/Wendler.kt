@@ -11,7 +11,7 @@ class Wendler constructor() {
     }
 
     private fun assignOneRepMax(gender: Boolean): Double {
-        return if (gender)
+        return if (!gender)
             0.85
         else
             0.95

@@ -28,8 +28,6 @@
         <activity android:name=".ToWarmupActivity" />
         <activity android:name=".ToTemplateActivity" />
         <activity android:name=".ToBmiActivity" />
-        <activity android:name=".ToBodybuildingActivity" />
-        <activity android:name=".ToPowerliftingActivity" />
         <activity android:name=".ToTimerActivity" />
 
         <activity android:name=".activities.BMIActivity" />

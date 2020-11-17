@@ -7,6 +7,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.Wendler
 import com.example.sweaty.R
+import com.example.sweaty.UserData
+
 
 class WendlerActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -18,7 +20,13 @@ class WendlerActivity : AppCompatActivity() {
         val rdOne = findViewById<RadioButton>(R.id.rdOne)
         val rdTwo = findViewById<RadioButton>(R.id.rdTwo)
 
-        val rdbGender = findViewById<RadioButton>(R.id.rdMale)
+        val rdbGender = findViewById<RadioGroup>(R.id.rgpGender)
+
+        if (UserData.gender) {
+            rdbGender.check(R.id.rdbMale)
+        }
+        else
+            rdbGender.check(R.id.rdFemale)
 
         btnCalculate.setOnClickListener() {
             val lift1 = findViewById<EditText>(R.id.editLift1).text.toString().toInt()
@@ -33,7 +41,14 @@ class WendlerActivity : AppCompatActivity() {
             val displayWeight2 = findViewById<TextView>(R.id.tvLift2)
             val displayWeight3 = findViewById<TextView>(R.id.tvLift3)
 
-            val gender = rdbGender.isChecked
+            var gender = false
+            if (rdbGender.checkedRadioButtonId == R.id.rdbMale) {
+                gender = true
+            }
+            else
+                gender = false
+
+            UserData.gender = gender
 
             val wen = Wendler()
             if (rdOne.isChecked) {

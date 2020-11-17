@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sweaty.BmiCalc
 import com.example.sweaty.MainActivity
 import com.example.sweaty.R
+import com.example.sweaty.UserData
 
 class BMIActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,9 @@ class BMIActivity() : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.btnBmiNxt)
 
+        if (UserData.weight != 0)
+            findViewById<EditText>(R.id.bmiWeightText).setText(UserData.weight)
+
         btnNext.setOnClickListener() {
             val weight = findViewById<EditText>(R.id.bmiWeightText).text.toString()
             Intent(this, BMISecondActivity::class.java).also {
@@ -23,6 +27,8 @@ class BMIActivity() : AppCompatActivity() {
                     it.putExtra("EXTRA_WEIGHT", 60.0)
                 else
                     it.putExtra("EXTRA_WEIGHT", weight.toDouble())
+                UserData.weight = weight.toInt()
+
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
@@ -36,6 +42,10 @@ class BMISecondActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity2)
 
+        if (UserData.height != 0)
+            findViewById<EditText>(R.id.bmiHeightText).setText(UserData.height)
+
+        val weight = intent.getDoubleExtra("EXTRA_WEIGHT",60.0)
         val btnCalculate = findViewById<Button>(R.id.bmiCalcButton)
 
         btnCalculate.setOnClickListener() {
@@ -46,6 +56,8 @@ class BMISecondActivity() : AppCompatActivity() {
                     it.putExtra("EXTRA_HEIGHT", 180.0)
                 else
                     it.putExtra("EXTRA_HEIGHT", height.toDouble())
+
+                UserData.height = height.toInt()
 
                 startActivity(it)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -66,6 +78,8 @@ class BMIThirdActivity() : AppCompatActivity() {
         outText.setText(BmiCalc(heightText, weightText).calculateBMI())
 
         val home = findViewById<Button>(R.id.btnHome)
+        outText.setText(BmiCalc(heightText, weightText).calculateBMI())
+
         home.setOnClickListener{
             val mainIntent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
