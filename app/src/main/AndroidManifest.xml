@@ -30,6 +30,8 @@
         <activity android:name=".ToBmiActivity" />
         <activity android:name=".ToTimerActivity" />
 
+        <activity android:name=".activities.WendlerActivity" />
+
         <activity android:name=".activities.BMIActivity" />
         <activity android:name=".activities.BMISecondActivity" />
         <activity android:name=".activities.BMIThirdActivity" />

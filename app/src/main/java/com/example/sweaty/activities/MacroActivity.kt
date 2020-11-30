@@ -14,29 +14,25 @@ class MacroFirstActivity() : AppCompatActivity() {
         setContentView(R.layout.macro_first_activity)
 
         val rdbGender = findViewById<RadioGroup>(R.id.rgpGender)
+        val rdbMale = findViewById<RadioButton>(R.id.rdbMale)
 
-        if (UserData.gender) {
+/*        if (UserData.gender)
             rdbGender.check(R.id.rdbMale)
-        }
         else
-            rdbGender.check(R.id.rdFemale)
-
-        if (UserData.weight != 0)
-            findViewById<EditText>(R.id.etWeight).setText(UserData.weight)
-        if (UserData.height != 0)
-            findViewById<EditText>(R.id.etHeight).setText(UserData.height)
+            rdbGender.check(R.id.rdFemale)*/
 
         val btnBioNext = findViewById<Button>(R.id.btnBioNext)
 
         btnBioNext.setOnClickListener() {
+            val gender = rdbMale.isChecked
+            if (UserData.weight != 0)
+                findViewById<EditText>(R.id.etWeight).setText(UserData.weight.toString())
+            if (UserData.height != 0)
+                findViewById<EditText>(R.id.etHeight).setText(UserData.height.toString())
+
             val weight = findViewById<EditText>(R.id.etWeight).text.toString()
             val height = findViewById<EditText>(R.id.etHeight).text.toString()
             val age = findViewById<EditText>(R.id.etAge).text.toString()
-            var gender = false
-            if (rdbGender.checkedRadioButtonId == R.id.rdbMale)
-                gender = true
-            else
-                gender = false
 
             Intent(this, MacrosSecondActivity::class.java).also {
                 if (weight == "")
@@ -133,7 +129,7 @@ class MacrosThirdActivity() : AppCompatActivity() {
             val hb = HarrisBenedict()
             val macros = hb.getMacros(weight, height, age, activity, ratio, gender)
 
-            carbs.text = "Carbo: ${macros.first.toInt()}g"
+            carbs.text = "Carbs: ${macros.first.toInt()}g"
             protein.text = "Protein: ${macros.second.toInt()}g"
             fat.text = "Fat: ${macros.third.toInt()}g"
             calories.text = "Daily Calories: ${macros.first.toInt() *4 + macros.second.toInt()*4 + 

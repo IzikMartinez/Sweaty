@@ -14,19 +14,19 @@ class WendlerActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.journal_activity)
+        setContentView(R.layout.progress_activity)
 
         val btnCalculate = findViewById<Button>(R.id.btnCalculate)
         val rdOne = findViewById<RadioButton>(R.id.rdOne)
         val rdTwo = findViewById<RadioButton>(R.id.rdTwo)
 
         val rdbGender = findViewById<RadioGroup>(R.id.rgpGender)
+        val rdbMale = findViewById<RadioButton>(R.id.rdbMale)
 
-        if (UserData.gender) {
+/*        if (UserData.gender)
             rdbGender.check(R.id.rdbMale)
-        }
         else
-            rdbGender.check(R.id.rdFemale)
+            rdbGender.check(R.id.rdFemale)*/
 
         btnCalculate.setOnClickListener() {
             val lift1 = findViewById<EditText>(R.id.editLift1).text.toString().toInt()
@@ -41,12 +41,7 @@ class WendlerActivity : AppCompatActivity() {
             val displayWeight2 = findViewById<TextView>(R.id.tvLift2)
             val displayWeight3 = findViewById<TextView>(R.id.tvLift3)
 
-            var gender = false
-            if (rdbGender.checkedRadioButtonId == R.id.rdbMale) {
-                gender = true
-            }
-            else
-                gender = false
+            val gender = rdbMale.isChecked
 
             UserData.gender = gender
 

@@ -1,10 +1,6 @@
 package com.example.sweaty
-import android.animation.ObjectAnimator
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -33,10 +29,15 @@ class ToWarmupActivity: AppCompatActivity() {
 
         val weightText = findViewById<EditText>(R.id.warmupInputText);
         val weightBtn = findViewById<Button>(R.id.warmupButton);
-        val outText = findViewById<EditText>(R.id.warmupOutput);
+        val firstSet = findViewById<TextView>(R.id.tvFirstSet);
+        val secondSet = findViewById<TextView>(R.id.tvSecondSet);
+        val thirdSet = findViewById<TextView>(R.id.tvThirdSet);
 
         weightBtn.setOnClickListener {
-            outText.setText(Warmup().warmupWeights(weightText.text))
+            val warmSets = Warmup().warmupWeights(weightText.text)
+            firstSet.setText("${warmSets.first.toString()} x 5")
+            secondSet.setText("${warmSets.second.toString()} x 3")
+            thirdSet.setText("${warmSets.third.toString()} x 1")
         }
     }
 }
@@ -66,7 +67,7 @@ class ToBmiActivity: AppCompatActivity() {
 class ToJournalActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.journal_activity)
+        setContentView(R.layout.progress_activity)
     }
 }
 

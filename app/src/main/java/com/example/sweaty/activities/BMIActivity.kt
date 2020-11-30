@@ -17,11 +17,12 @@ class BMIActivity() : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.btnBmiNxt)
 
-        if (UserData.weight != 0)
-            findViewById<EditText>(R.id.bmiWeightText).setText(UserData.weight)
-
         btnNext.setOnClickListener() {
+            if (UserData.weight != 0)
+                findViewById<EditText>(R.id.bmiWeightText).setText(UserData.weight)
+
             val weight = findViewById<EditText>(R.id.bmiWeightText).text.toString()
+
             Intent(this, BMISecondActivity::class.java).also {
                 if (weight == "")
                     it.putExtra("EXTRA_WEIGHT", 60.0)
@@ -46,10 +47,12 @@ class BMISecondActivity() : AppCompatActivity() {
             findViewById<EditText>(R.id.bmiHeightText).setText(UserData.height)
 
         val weight = intent.getDoubleExtra("EXTRA_WEIGHT",60.0)
+
         val btnCalculate = findViewById<Button>(R.id.bmiCalcButton)
 
         btnCalculate.setOnClickListener() {
             val height = findViewById<EditText>(R.id.bmiHeightText).text.toString()
+
             Intent(this, BMIThirdActivity::class.java).also {
 
                 if (height == "")
@@ -66,7 +69,10 @@ class BMISecondActivity() : AppCompatActivity() {
     }
 }
 
+
+
 class BMIThirdActivity() : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi_activity3)
@@ -76,9 +82,9 @@ class BMIThirdActivity() : AppCompatActivity() {
         val weightText = intent.getDoubleExtra("EXTRA_WEIGHT", 60.0)
 
         outText.setText(BmiCalc(heightText, weightText).calculateBMI())
+        outText.setText(BmiCalc(heightText, weightText).calculateBMI())
 
         val home = findViewById<Button>(R.id.btnHome)
-        outText.setText(BmiCalc(heightText, weightText).calculateBMI())
 
         home.setOnClickListener{
             val mainIntent = Intent(this, MainActivity::class.java)
